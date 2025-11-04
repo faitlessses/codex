@@ -1,5 +1,7 @@
 import { create } from 'zustand';
 
+import { clampProgress } from '../utils/progress';
+
 export type TrainingStatus = 'idle' | 'training' | 'complete';
 
 export interface TrainingState {
@@ -13,7 +15,7 @@ export const useTrainingStore = create<TrainingState>((set) => ({
   status: 'idle',
   updateTrainingProgress: (value) => {
     set((state) => {
-      const progress = Math.max(0, Math.min(100, value));
+      const progress = clampProgress(value);
 
       let nextStatus = state.status;
       if (progress === 100) {

@@ -1,5 +1,7 @@
 import React from 'react';
 
+import { clampProgress } from '../utils/progress';
+
 export interface TrainingRun {
   id: string;
   name: string;
@@ -14,7 +16,7 @@ export const TrainingDeck: React.FC<TrainingDeckProps> = ({ runs }) => {
   return (
     <div className="training-deck">
       {runs.map((run) => {
-        const progress = Math.min(Math.max(run.progress ?? 0, 0), 100);
+        const progress = clampProgress(run.progress);
         return (
           <div key={run.id} className="training-deck__item">
             <div className="training-deck__item-header">
