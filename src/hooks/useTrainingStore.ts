@@ -24,6 +24,10 @@ export const useTrainingStore = create<TrainingState>((set) => ({
         nextStatus = 'training';
       }
 
+      if (progress === state.progress && nextStatus === state.status) {
+        return state;
+      }
+
       return {
         progress,
         status: nextStatus,

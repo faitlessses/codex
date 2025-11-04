@@ -17,11 +17,12 @@ export const TrainingDeck: React.FC<TrainingDeckProps> = ({ runs }) => {
     <div className="training-deck">
       {runs.map((run) => {
         const progress = clampProgress(run.progress);
+        const roundedProgress = Math.round(progress);
         return (
           <div key={run.id} className="training-deck__item">
             <div className="training-deck__item-header">
               <span className="training-deck__item-name">{run.name}</span>
-              <span className="training-deck__item-progress">{progress.toFixed(0)}%</span>
+              <span className="training-deck__item-progress">{roundedProgress}%</span>
             </div>
             <div className="training-deck__progress-bar">
               <div
