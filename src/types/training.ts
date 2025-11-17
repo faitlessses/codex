@@ -28,6 +28,8 @@ export type Metrics = {
   captionsPerMinute: number[];
   datasetGrowth: number[];
 };
+codex/debug-grok_app_full_project.ts-hpr0zk
+=======
 
 export interface TrainingState {
   uploads: Upload[];
@@ -42,3 +44,4 @@ export interface TrainingState {
   updateMetrics: (metrics: Partial<Metrics>) => void;
   setSelectedModel: (model: "flux1.dev" | "wan2.2") => void;
 }
+ main
