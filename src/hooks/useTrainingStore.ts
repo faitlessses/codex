@@ -1,34 +1,6 @@
 import { create } from "zustand";
 import { mockUploads, mockTrainingRuns, mockMetrics } from "../data/mock";
-
-type UploadStatus = "queued" | "processing" | "captioned" | "error";
-
-type Upload = {
-  id: string;
-  name: string;
-  type: "image" | "video";
-  status: UploadStatus;
-  variants: number;
-  qualityScore: number;
-  description?: string;
-};
-
-type TrainingRun = {
-  id: string;
-  title: string;
-  progress: number;
-  eta: string;
-  loss: number;
-  lr: number;
-  checkpoints: number;
-  status: "training" | "scheduling" | "complete";
-};
-
-type Metrics = {
-  losses: number[];
-  captionsPerMinute: number[];
-  datasetGrowth: number[];
-};
+import { Metrics, TrainingRun, Upload } from "../types/training";
 
 interface TrainingState {
   uploads: Upload[];

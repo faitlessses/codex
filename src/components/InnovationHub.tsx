@@ -1,4 +1,4 @@
-import { IconRocket, IconHeartbeat, IconChartHistogram, IconCloudSparkles } from "@tabler/icons-react";
+import { IconRocket, IconHeartbeat, IconChartHistogram, IconCloudBolt } from "@tabler/icons-react";
 import { motion } from "framer-motion";
 
 const innovations = [
@@ -24,7 +24,7 @@ const innovations = [
   {
     title: "Cloudburst Render",
     description: "Spin up ephemeral inference shards to test LoRA merges across packaging SKUs instantly.",
-    icon: IconCloudSparkles,
+    icon: IconCloudBolt,
     accent: "text-neon-cyan"
   }
 ];
