@@ -1,11 +1,29 @@
 import { create } from "zustand";
 import { mockUploads, mockTrainingRuns, mockMetrics } from "../data/mock";
+codex/debug-grok_app_full_project.ts-hpr0zk
+import { Metrics, TrainingRun, Upload } from "../types/training";
+
+interface TrainingState {
+  uploads: Upload[];
+  trainingRuns: TrainingRun[];
+  metrics: Metrics;
+  selectedModel: "flux1.dev" | "wan2.2";
+  autoCaptioning: boolean;
+  datasetCohesion: number;
+  addUpload: (upload: Upload) => void;
+  toggleAutoCaptioning: () => void;
+  updateTrainingProgress: (runId: string, progress: number) => void;
+  updateMetrics: (metrics: Partial<Metrics>) => void;
+  setSelectedModel: (model: "flux1.dev" | "wan2.2") => void;
+}
+
 import {
   Metrics,
   TrainingRun,
   TrainingState,
   Upload
 } from "../types/training";
+main
 
 export const useTrainingStore = create<TrainingState>()((set) => ({
   uploads: mockUploads,

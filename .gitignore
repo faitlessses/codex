@@ -1,5 +1,8 @@
 node_modules
 dist
+codex/debug-grok_app_full_project.ts-hpr0zk
+
 .env
 npm-debug.log*
+main
 .DS_Store
